@@ -1,5 +1,6 @@
 package br.com.sitemusica.entities;
 
+import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -16,4 +17,7 @@ public class Artista {
     @ManyToOne
     @JoinColumn(name = "IdNacionalidade")
     private Nacionalidade nacionalidade;
+    
+    @ManyToMany(mappedBy = "musicaartistas")
+    private List<Musica> artistamusicas;
 }
